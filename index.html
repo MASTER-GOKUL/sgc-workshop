@@ -1,0 +1,236 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function validateform(){
+  var num=["0","1","2","3","4","5","6","7","8","9"];
+ var cap = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
+  var a = document.forms["myForm"]["Ph_no"].value;
+  var b = document.forms["myForm"]["Roll_no"].value;
+  var c = document.forms["myForm"]["Name"].value;
+  var i; var j; var f=0; var k=[]; var e=[]; var n=[];
+f=0;
+for(i=0;i<c.length;i++){
+n[i]=c.substring(i,i+1);}
+for(i=0;i<c.length;i++){
+	for(j=0; j<26 ;j++){
+if(n[i]==cap[j]){
+f=1;}}}
+if(f!=1){
+alert("use uppercase characters(Name)");
+return false;}
+f=0;
+for(i=0;i<a.length;i++){
+k[i]=a.substring(i,i+1);}
+for(i=0;i<a.length;i++){
+for(j=0; j<10 ;j++){
+if(k[i]==num[j]){
+f=1;}}}
+if(f!=1){
+alert("use numberical characters(Phone Number)");
+return false;}
+if(a.length < 10||a.length > 10){ 
+  alert("phone number minimium 10");
+  return false;}
+f=0;
+for(i=0;i<b.length;i++){
+e[i]=b.substring(i,i+1);}
+for(i=0;i<b.length;i++){
+for(j=0; j<10 ;j++){
+if(e[i]==num[j]){
+f=1;}}}
+if(f!=1){
+alert("use numberical characters(Roll Number)");
+return false;}
+
+
+}
+</script>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    background-color: #0c1022;
+}
+.container{
+    position: relative;
+    width: 380px;
+    height: 830px;
+    max-width: 380px;
+    max-height: 830px;
+    background: #040717;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.container::before{
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: conic-gradient(transparent, transparent, transparent, #DC143C);
+    animation: rotate_border 6s linear infinite;
+
+}
+
+.container::after{
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
+    animation: rotate_border 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes rotate_border{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.form{
+    position: absolute;
+    content: '';
+    background-color: #0c1022;
+    inset: 5px;
+    padding: 50px 40px;
+    z-index: 10;
+    color: #00ccff;
+} 
+h2{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+.input_group{
+    margin-top: 40px;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content: start;
+}
+.input_text{
+    width: 95%;
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #00ccff;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #ffffff;
+    margin: 10px;
+}
+option{
+background-color: #040717;
+}
+button{
+border: 3px outset #ffffff78;
+padding: 8px 25px;
+border-radius: 4px;
+font-size: 16px;
+background-color:cyan;
+box-shadow: 0 0 5px cyan,
+0 0 25px cyan;
+}
+button:hover{
+box-shadow: 0 0 5px cyan,
+0 0 25px cyan,0 0 50px cyan;
+}
+h1{
+font-size:35;
+}
+</style>
+</head>
+<body>
+<center>
+<div style="margin-top: 10px;">
+<table>
+<tr>
+<th><img src="https://lh5.googleusercontent.com/p/AF1QipM5m9YO9aNL53xT3xjCw2xVq63SgVH2gWqI-X9Z=w900-h482-p-k-no" width="70" height="50"/></th>
+<th><h1  style="float:right;color:#ffffff;" >WORKSHOP</h1></th>
+</tr>
+</table>
+ </div>
+
+
+  <div class="container">
+  <div class="form">
+  <h2>REGISTER</h2>
+
+<form methed="post" name="myForm" action="https://script.google.com/macros/s/AKfycbxjr12Xvemv3nxmAwt2lOicwF7JFNudGm_VqBHR1_ryvDtc2nptBKsGHSHlPVjCqN0EDw/exec" onsubmit="return validateform()">
+
+  <div class="input_group">
+  <label for="Name">NAME</label></div><div>
+  <input type="text" class="input_text" value="" name="Name" id="Name" required/>
+  </div>
+
+  <div class="input_group">
+  <label for="Roll_no">ROLLNO</label></div><div>
+  <input type="text" class="input_text" value="" name="Roll_no" id="Roll_no" required/>
+  </div>
+
+  <div class="input_group">
+  <label for="Dept">DEPARTMENT</label></div><div>
+  <select class="input_text" value="" name="Dept" id="Dept" required>
+   <option value="" selected disabled hidden></option>
+   <option value="MECH">Mechanical Engineering</option>
+   <option value="CIVIL">Civil Engineering</option>
+   <option value="ECE">Electeonics And Communication Engineering</option>
+   <option value="CSE-B">Computer Science Engineering - [B]</option> 
+   <option value="IT-A">Information Technology - [A]</option>
+   <option value="AIDS">Artifical Intelligence and Data Science</option>  
+  </select>
+  </div>
+
+  <div class="input_group">
+  <label for="Ph_no">PHONE NUMBER</label></div><div>
+  <input type="text" class="input_text" value="" name="Ph_no" id="Ph_no" required/>
+  </div>
+
+  <div class="input_group">
+  <label for="Mail_ID">MAIL ID</label></div><div>
+  <input type="email" class="input_text" value="" name="Mail_ID" id="Mail_ID" required/>
+  </div>
+
+
+  <i style="font-size:12px;color:white;"><input type="checkbox" id="check" onclick="enable()"> After submit you'll get an invitation.
+(please download or Take screenshot).
+your serial number is mandatory.Note It!!! </i>
+
+  <div><br>
+  <br><center>
+  <button disabled="true" type="submit" name="submit" id="S">SUBMIT</button>
+  </center></div>
+
+</form>
+  </div>
+  </div>
+ 
+</center>
+</body>
+<script>
+function enable() {
+var check = document.getElementById("check"); var btn = document.getElementById("S");
+if (check.checked) {
+btn.removeAttribute("disabled");
+}else{
+btn.disabled="true"
+}
+}
+</script>
+</html>
