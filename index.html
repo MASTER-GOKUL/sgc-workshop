@@ -14,9 +14,9 @@ for(i=0;i<c.length;i++){
 n[i]=c.substring(i,i+1);}
 for(i=0;i<c.length;i++){
 	for(j=0; j<26 ;j++){
-if(n[i]==cap[j]){
-f=1;}}}
-if(f!=1){
+if((n[i]==cap[j])||(n[i]==" ")){
+f++;}}}
+if(f<c.length){
 alert("use uppercase characters(Name)");
 return false;}
 f=0;
@@ -30,7 +30,7 @@ if(f!=1){
 alert("use numberical characters(Phone Number)");
 return false;}
 if(a.length < 10||a.length > 10){ 
-  alert("phone number minimium 10");
+  alert("Enter valid phone number");
   return false;}
 f=0;
 for(i=0;i<b.length;i++){
@@ -190,7 +190,7 @@ font-size:35;
    <option value="" selected disabled hidden></option>
    <option value="MECH">Mechanical Engineering</option>
    <option value="CIVIL">Civil Engineering</option>
-   <option value="ECE">Electeonics And Communication Engineering</option>
+   <option value="ECE">Electronics And Communication Engineering</option>
    <option value="CSE-B">Computer Science Engineering - [B]</option> 
    <option value="IT-A">Information Technology - [A]</option> 
   </select>
